@@ -1,0 +1,107 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #f5f7fa;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+header {
+  background: #2E86DE;
+  color: white;
+  padding: 20px;
+  border-radius: 0 0 20px 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.subtitle {
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+.card {
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  margin: 20px auto;
+  padding: 20px;
+  max-width: 800px;
+  text-align: center;
+}
+
+button {
+  padding: 10px 25px;
+  font-size: 18px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+button:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+.forward { background: #10B981; color: white; }
+.backward { background: #2563EB; color: white; }
+.left, .right { background: #6B7280; color: white; }
+.stop { background: #EF4444; color: white; }
+
+.control-grid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.middle-controls {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.speed-control {
+  margin-top: 20px;
+}
+
+input[type="range"] {
+  width: 60%;
+  margin-left: 10px;
+}
+
+.status-grid {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+#log-container {
+  text-align: left;
+  font-size: 14px;
+  max-height: 200px;
+  overflow-y: auto;
+  background: #f1f1f1;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.status-indicator {
+  font-weight: bold;
+}
+
+#device-ip {
+  width: 200px;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 3px 5px;
+}
+
+footer {
+  margin: 30px 0 10px 0;
+  font-size: 12px;
+  color: #666;
+}

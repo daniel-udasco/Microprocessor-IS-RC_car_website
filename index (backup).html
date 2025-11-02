@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RC Car WiFi Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <h1>🚗 RC Car Control Dashboard</h1>
+    <p class="subtitle">Microprocessor & IS IoT Project</p>
+  </header>
+
+  <section id="connection-panel" class="card">
+    <p>🔗 Connection Status: <span id="connection-status" class="status-indicator">🟡 Connecting...</span></p>
+    <p>Device IP: <input type="text" id="device-ip" value="192.168.1.20" /></p>
+    <button id="connect-btn">Connect</button>
+  </section>
+
+  <section id="controls" class="card">
+    <h2>🕹️ Control Panel</h2>
+    <div class="control-grid">
+      <button class="forward" onclick="sendCommand('forward')">↑ Forward</button>
+      <div class="middle-controls">
+        <button class="left" onclick="sendCommand('left')">← Left</button>
+        <button class="stop" onclick="sendCommand('stop')">⏹ Stop</button>
+        <button class="right" onclick="sendCommand('right')">→ Right</button>
+      </div>
+      <button class="backward" onclick="sendCommand('backward')">↓ Backward</button>
+    </div>
+
+    <div class="speed-control">
+      <label for="speed-slider">Speed:</label>
+      <input type="range" id="speed-slider" min="0" max="100" value="50" oninput="updateSpeedLabel(this.value)">
+      <span id="speed-value">50%</span>
+    </div>
+  </section>
+
+  <section id="status" class="card">
+    <h2>📊 Status Panel</h2>
+    <div class="status-grid">
+      <div><strong>Distance:</strong> <span id="distance">--</span> cm</div>
+      <div><strong>Battery:</strong> <span id="battery">--</span>%</div>
+      <div><strong>Mode:</strong> <span id="mode">Manual</span></div>
+    </div>
+  </section>
+
+  <section id="logs" class="card">
+    <h2>🕓 Action Logs</h2>
+    <div id="log-container"></div>
+  </section>
+
+  <footer>
+    <p>© 2025 RC Car IoT Project – Microprocessor & IS</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

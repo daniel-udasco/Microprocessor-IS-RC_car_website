@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RC Car WiFi Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <h1>RC Car IoT Arduino Project</h1>
+    <p class="subtitle">Microprocessor & Interfacing Systems</p>
+  </header>
+
+  <main>
+    <section id="connection-panel" class="card">
+      <p>Connection: <span id="connection-status" class="status">[ WAITING... ]</span></p>
+      <p>Device IP: <input type="text" id="device-ip" value="192.168.1.20" /></p>
+      <button id="connect-btn" class="btn-connect">CONNECT</button>
+    </section>
+
+    <section id="controls" class="card">
+      <h2>CONTROL PANEL</h2>
+      <div class="control-grid">
+        <button class="control-btn forward" onclick="sendCommand('forward')">↑ FORWARD</button>
+        <div class="middle-controls">
+          <button class="control-btn left" onclick="sendCommand('left')">← LEFT</button>
+          <button class="control-btn stop" onclick="sendCommand('stop')">■ STOP</button>
+          <button class="control-btn right" onclick="sendCommand('right')">→ RIGHT</button>
+        </div>
+        <button class="control-btn backward" onclick="sendCommand('backward')">↓ BACKWARD</button>
+      </div>
+
+      <div class="speed-control">
+        <label>SPEED:</label>
+        <input type="range" id="speed-slider" min="0" max="100" value="50" oninput="updateSpeedLabel(this.value)">
+        <span id="speed-value">50%</span>
+      </div>
+    </section>
+
+    <section id="status" class="card">
+      <h2>SYSTEM STATUS</h2>
+      <div class="status-grid">
+        <p><span class="label">Distance:</span> <span id="distance">--</span> cm</p>
+        <p><span class="label">Battery:</span> <span id="battery">--</span>%</p>
+        <p><span class="label">Mode:</span> <span id="mode">Manual</span></p>
+      </div>
+    </section>
+
+    <section id="logs" class="card">
+      <h2>TERMINAL LOGS</h2>
+      <div id="log-container"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© T09 Batch 2025-2026</p>
+    <p>Macalipsay, Mallorca, Udasco, Jalandoni, Galagate, Monillo</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
